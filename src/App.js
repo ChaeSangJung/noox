@@ -1,5 +1,5 @@
 import React from 'react';
-import { useInput } from "./hooks";
+import { useInput, useTabs } from "./hooks";
 import './App.css';
 
 
@@ -9,7 +9,22 @@ function App() {
   const maxLen = value => value.length <= 10;
   // const maxLen = value => !value.includes("@");
   const name = useInput("Mr. ", maxLen);
+
+  // tabs data
+  const content = [
+    {
+      tab: "section 1",
+      content: "I'm the contentn of the Section 1"
+    },
+    {
+      tab: "section 2",
+      content: "I'm the contentn of the Section 2"
+    }
+  ]
  
+  // set tabs' default
+  const {currentItem, changeItem} = useTabs(0, content);
+
   return (
     <>
     {/* useInput */}
@@ -19,6 +34,14 @@ function App() {
       {/* <input placeholder="name" value={name.value}/> */}
       <input placeholder="name" {...name}/>      
     </div>
+
+    {/* useTabs */}
+    <div className="App">      
+      {content.map((section, index) => (
+        <button onClick={() => changeItem(index)}>{section.tab}</button>
+      ))}
+    </div>
+    {currentItem.content}
     </>
   );
 }

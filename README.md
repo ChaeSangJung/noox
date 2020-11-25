@@ -1,6 +1,6 @@
 # 실전형 리액트 Hooks 10개
 - [X] useInput
-- [ ] useTabs
+- [X] useTabs
 - [ ] useTitle
 - [ ] useClick
 - [ ] useConfirm
