@@ -1,26 +1,30 @@
 import React from 'react';
-import logo from './logo.svg';
+import { useInput } from "./hooks";
 import './App.css';
 
-function App() {
+
+
+function App() {  
+  // useInput
+  const maxLen = value => value.length <= 10;
+  // const maxLen = value => !value.includes("@");
+  const name = useInput("Mr. ", maxLen);
+ 
   return (
+    <>
+    {/* useInput */}
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <span>Hello</span>
+      
+      {/* <input placeholder="name" value={name.value}/> */}
+      <input placeholder="name" {...name}/>      
     </div>
+    </>
   );
 }
 
 export default App;
+
+// hooks : react의 state machine에 연결하는 기본적인 방법
+
+// useInput input updating
