@@ -1,5 +1,5 @@
 import React from 'react';
-import { useInput, useTabs } from "./hooks";
+import { useInput, useTabs, useTitle } from "./hooks";
 import './App.css';
 
 
@@ -24,6 +24,11 @@ function App() {
  
   // set tabs' default
   const {currentItem, changeItem} = useTabs(0, content);
+
+  // useTitle
+  const titleUpdater = useTitle("Loading...");
+  setTimeout(() => titleUpdater("Home"), 5000);
+
 
   return (
     <>
