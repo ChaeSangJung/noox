@@ -2,7 +2,7 @@
 - [X] useInput
 - [X] useTabs
 - [X] useTitle
-- [ ] useClick
+- [X] useClick
 - [ ] useConfirm
 - [ ] usePreventLeave
 - [ ] useBeforeLeave
